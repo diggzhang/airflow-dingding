@@ -1804,8 +1804,7 @@ class TaskInstance(Base, LoggingMixin):
         body = (
             "### {self.task_id} \n"
             "* Try {try_number} out of {max_tries} \n"
-            "* Exception:<br>{exception} \n"
-            "* Log: [link]({self.log_url})"
+            "* ErrorLog: [link]({self.log_url})"
         ).format(try_number=self.try_number, max_tries=self.max_tries + 1, **locals())
         dingbot_msg_sender(body)
 
