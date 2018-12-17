@@ -25,6 +25,8 @@ def dingbot_msg_sender(msg):
     }
 
     r = requests.post(bot_url, headers=headers,data=json.dumps(post_data))
+    with open('/usr/local/airflow/logs/ali_phone_call.log', 'a') as the_file:
+        the_file.write('1\n')
 
 
 def ding_bot_backend(msg):
